@@ -44,7 +44,7 @@ Create Test Cases under src/test/java for below scenarios(all the transaction st
 5. verify customer total points
 
 # To run
-- git clone https://github.com/
+- git clone https://github.com/liamworkhard/antra_rewards.git
 - mvn clean compile
 - mvn spring-boot:run
 
