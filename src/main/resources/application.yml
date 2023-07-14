@@ -1,0 +1,27 @@
+logging:
+  level:
+    org:
+      springframework : INFO
+    com:
+      antra: DEBUG
+    root: ERROR
+  pattern:
+    console: '%-5level %logger{36} - %msg%n'
+
+spring:
+  datasource:
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false
+    url: jdbc:h2:mem:rewards
+    driverClassName: org.h2.Driver
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
