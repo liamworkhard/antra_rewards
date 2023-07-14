@@ -7,7 +7,7 @@ Solution Requirement
 1. Create some Restful APIs to get customer's reward points. By customized input like user id or user name.
 2. Use common sense to make assumptions.
 3. Consider the API security and confidentiality of user data.
-4. Make up a data set to best demonstrate your solution. 
+4. Make up a data set to best demonstrate your solution.
 5. The solution should demonstrate the design of API, business logic and data storage.
 6. Use SpringBoot 2 or 3.
 7. Frontend is not required, but the solution should include instructions of how to build, run and validate the result.
@@ -15,7 +15,7 @@ Solution Requirement
 9. Should have proper Unit test cases.
 
 ## Sample data and solution
-1. Using Spring Boot in memory H2 DB for creation of sample data. 
+1. Using Spring Boot in memory H2 DB for creation of sample data.
 2. There are three schemas - Customer, Transaction and Rewards schema.
 3. These three schemas have a Foreign key relationship. Queries to create these schemas are present in schema.sql under src/main/resources.
 4. Schemas will be automatically loaded into H2 during the project starting process.
@@ -62,28 +62,28 @@ Sample Response
 
 After the program is run, user should log in first use:
 1. curl --location 'localhost:8080/login' \
---form 'userName="demo1@antra.com"' \
---form 'password="demo1"'
+   --form 'userName="demo1@antra.com"' \
+   --form 'password="demo1"'
 2. And then enter either of the following link in the URL:
-http://localhost:8080/rewards
-http://localhost:8080/transactions
-when not log in
-![img_8.png](img_8.png)
-do log in and request
-![img_5.png](img_5.png)
-![img_6.png](img_6.png)
-![img_7.png](img_7.png)
+* http://localhost:8080/rewards
+* http://localhost:8080/transactions
+* When not log in
+  ![img_8.png](img_8.png)
+* do log in and request
+  ![img_5.png](img_5.png)
+  ![img_6.png](img_6.png)
+  ![img_7.png](img_7.png)
 
-# Database 
+# Database
 
 To log into the H2 database to check the data in tables use following link:
-http://localhost:8080/h2  
+http://localhost:8080/h2
 1. Input JDBC URL ---> jdbc:h2:mem:rewards
 2. Input password admin
 3. Click 'Connect' button
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
+   ![img_1.png](img_1.png)
+   ![img_2.png](img_2.png)
+   ![img_3.png](img_3.png)
+   ![img_4.png](img_4.png)
 
 
