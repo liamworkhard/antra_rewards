@@ -22,13 +22,13 @@ Solution Requirement
 5. We registered a EventListener in DataInitialization class, which will execute after project started. And will automatically insert 3 customers into customer table and 300 hundred transactions with dynamic amounts in dynamic month in 2022 into transaction table(each customer 100 transactions).
 6. Rewarded points to the transaction will be calculated when building the transaction.
 7. When all the data ready, an async task which simulates the batch task will execute to calculate the reward points earned for each customer per month and total(MonthlyRewardsCalculateTask), calculate these data on api requests is not acceptable.
-8. We use shiro to safeguard the API security. We can get customer's reward points after login to the system, or will get 405 error status code.
+8. We use shiro to safeguard the API security. We can get customer's reward points after login to the system, or will get 405 error status code(H2 and actuator url has been added to the white list).
 9. We can only see the rewards and transaction data of yourself, so the apis do not have customized input like user id, we can get it after log in and there is no need to pass it through api, this approach enhances the api safety.
 10. We can have the apis which contains customized input like user id in operation support system which only can be accessed in the organization's intranet.
 11. We use SpringBoot 2.1.2.RELEASE.
 
 ## Code Structure
-![img.png](img.png)
+![img.png](images/img.png)
 
 ## Test Cases
 Create Test Cases under src/test/java for below scenarios(all the transaction store in cents unit):
@@ -49,8 +49,8 @@ Create Test Cases under src/test/java for below scenarios(all the transaction st
 - mvn spring-boot:run
 
 # Health API
-http://localhost:8080/actuator/
-http://localhost:8080/actuator/health
+* http://localhost:8080/actuator/
+* http://localhost:8080/actuator/health
 
 Sample Response
 ```{"status":"UP"}```
@@ -68,11 +68,11 @@ After the program is run, user should log in first use:
 * http://localhost:8080/rewards
 * http://localhost:8080/transactions
 * When not log in
-  ![img_8.png](img_8.png)
+  ![img_8.png](images/img_8.png)
 * do log in and request
-  ![img_5.png](img_5.png)
-  ![img_6.png](img_6.png)
-  ![img_7.png](img_7.png)
+  ![img_5.png](images/img_5.png)
+  ![img_6.png](images/img_6.png)
+  ![img_7.png](images/img_7.png)
 
 # Database
 
@@ -81,9 +81,9 @@ http://localhost:8080/h2
 1. Input JDBC URL ---> jdbc:h2:mem:rewards
 2. Input password admin
 3. Click 'Connect' button
-   ![img_1.png](img_1.png)
-   ![img_2.png](img_2.png)
-   ![img_3.png](img_3.png)
-   ![img_4.png](img_4.png)
+   ![img_1.png](images/img_1.png)
+   ![img_2.png](images/img_2.png)
+   ![img_3.png](images/img_3.png)
+   ![img_4.png](images/img_4.png)
 
 
