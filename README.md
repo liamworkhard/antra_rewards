@@ -31,7 +31,7 @@ Solution Requirement
 ![img.png](images/img.png)
 
 ## Test Cases
-Create Test Cases under src/test/java for below scenarios(all the transaction store in cents unit):
+Create Test Cases under src/test/java for below scenarios(all the transactions amount store in cents unit):
 ### For single transaction reward points calculate in RewardsUtilTest.testCalculatePoints
 1. Amount < 51_00
 2. Amount > 51_00 & < 10_000
@@ -58,16 +58,16 @@ Sample Response
 # Urls:
 1. To get rewards for current customer  -> /rewards
 2. To get transactions for current customer  -> /transactions
-3. We can support pagination and data filter features afterward.
+3. We can support pagination and data filter features afterwards.
 
-After the program is run, user should log in first use:
+When the program started, user should log in first use:
 1. curl --location 'localhost:8080/login' \
    --form 'userName="demo1@antra.com"' \
    --form 'password="demo1"'
-2. And then enter either of the following link in the URL:
+2. Then enter either of the following link in the URL:
 * http://localhost:8080/rewards
 * http://localhost:8080/transactions
-* When not log in
+* If not log in
   ![img_8.png](images/img_8.png)
 * do log in and request
   ![img_5.png](images/img_5.png)
