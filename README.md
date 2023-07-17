@@ -19,9 +19,9 @@ Solution Requirement
 2. There are three schemas - Customer, Transaction and Rewards schema.
 3. These three schemas have a Foreign key relationship. Queries to create these schemas are present in schema.sql under src/main/resources.
 4. Schemas will be automatically loaded into H2 during the project starting process.
-5. We registered a EventListener in DataInitialization class, which will execute after project started. And will automatically insert 3 customers into customer table and 300 hundred transactions with dynamic amounts in dynamic month in 2022 into transaction table(each customer 100 transactions).
+5. We registered a EventListener in DataInitialization class, which will execute after project started. And will automatically insert 3 customers into customer table and 300 transactions with dynamic amounts in dynamic month within 2022 into transaction table(each customer 100 transactions).
 6. Rewarded points to the transaction will be calculated when building the transaction.
-7. When all the data ready, an async task which simulates the batch task will execute to calculate the reward points earned for each customer per month and total(MonthlyRewardsCalculateTask), calculate these data on api requests is not acceptable.
+7. When all the data ready, an async task which simulates the batch task will execute to calculate the reward points earned for each customer per month and total(MonthlyRewardsCalculateTask), calculating these data during api requests is not acceptable.
 8. We use shiro to safeguard the API security. We can get customer's reward points after login to the system, or will get 405 error status code(H2 and actuator url has been added to the white list).
 9. We can only see the rewards and transaction data of yourself, so the apis do not have customized input like user id, we can get it after log in and there is no need to pass it through api, this approach enhances the api safety.
 10. We can have the apis which contains customized input like user id in operation support system which only can be accessed in the organization's intranet.
